@@ -12,17 +12,12 @@ class TrainsTableSeeder extends Seeder
      */
     public function run()
     {
-        $train = new Train();
-        $train->company = 'Trenitalia';
-        $train->departure_station = 'Verona';
-        $train->arrival_station = 'Milano';
-        $train->departure_time = '14:00';
-        $train->arrival_time = '16:00';
-        $train->train_code_number = '12345678';
-        $train->carriages = 6;
-        $train->on_time = true;
-        $train->cancelled = false;
+        $trains = config('trains');
 
-        $train->save();
+        foreach ($trains as $train) {
+            $new_train = new Train();
+            $new_train->fill($train);
+            $new_train->save();
+        }
     }
 }
