@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Train extends Model
 {
+
+
     protected $fillable = [
         'company',
         'departure_station',

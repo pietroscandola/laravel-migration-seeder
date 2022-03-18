@@ -3,8 +3,9 @@
 @section('title', 'Home')
 
 @section('content')
-    @foreach ($trains as$train)
-    <div>{{ $train->company}}</div>
+    @foreach ($trains as $train)
+        {{$train->company}}
+    
     @endforeach
 
 @endsection

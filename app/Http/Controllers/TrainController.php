@@ -6,6 +6,9 @@ use App\Models\Train;
 
 class TrainController extends Controller
 {
-    $trains = Train::all();  
-    return view('home', compact('trains'));
+    public function home()
+    {
+        $trains = Train::all();
+        return view('home', compact('trains'));
+    }
 }
